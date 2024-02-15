@@ -13,25 +13,11 @@ class TestFilters < JekyllUnitTest
     end
   end
 
-  class Value
-    def initialize(value)
-      @value = value
-    end
-
-    def to_s
-      @value.respond_to?(:call) ? @value.call : @value.to_s
-    end
-  end
-
   def make_filter_mock(opts = {})
     JekyllFilter.new(site_configuration(opts)).tap do |f|
       tz = f.site.config["timezone"]
       Jekyll.set_timezone(tz) if tz
     end
-  end
-
-  class SelectDummy
-    def select; end
   end
 
   context "filters" do
