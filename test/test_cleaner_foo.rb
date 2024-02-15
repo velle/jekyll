@@ -3,6 +3,9 @@
 require "helper"
 
 class TestCleaner < JekyllUnitTest
+  def self.test_order
+   :alpha
+  end
 
   context "directory containing no files and non-empty directories" do
     setup do
@@ -17,4 +20,6 @@ class TestCleaner < JekyllUnitTest
     end
 
   end
+
+
 end
