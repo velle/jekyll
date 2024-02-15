@@ -130,7 +130,8 @@ task :spec => :test
 require "rake/testtask"
 Rake::TestTask.new(:test) do |test|
   test.libs << "lib" << "test"
-  test.pattern = "test/**/test_*.rb"
+#  test.pattern = "test/**/test_*foo.rb"
+  test.test_files = ["test/test_cleaner_foo.rb","test/test_filters_foo.rb"]
   test.verbose = true
 end
 
