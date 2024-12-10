@@ -12,4 +12,10 @@ bundle exec ruby -w -I"lib:lib:test" \
 #bundle exec rake test TEST=test/test_filters_foo.rb
 
 
-bundle exec rake test
+bundle exec rake test_foo TESTOPTS="--seed=1261"
+
+
+bundle exec rake test_foo TESTOPTS="-v"
+
+
+bundle exec rake test TEST=test/test_cleaner.rb
